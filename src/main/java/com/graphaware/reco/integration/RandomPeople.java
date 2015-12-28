@@ -1,3 +1,5 @@
+package com.graphaware.reco.integration;
+
 import com.graphaware.common.policy.BaseNodeInclusionPolicy;
 import com.graphaware.common.policy.NodeInclusionPolicy;
 import com.graphaware.reco.generic.context.Context;

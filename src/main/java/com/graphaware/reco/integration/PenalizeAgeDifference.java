@@ -1,3 +1,5 @@
+package com.graphaware.reco.integration;
+
 import com.graphaware.reco.generic.context.Context;
 import com.graphaware.reco.generic.post.BasePostProcessor;
 import com.graphaware.reco.generic.result.Recommendation;

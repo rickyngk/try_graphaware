@@ -1,9 +1,10 @@
+package com.graphaware.reco.integration;
+
 import com.graphaware.reco.generic.transform.ParetoScoreTransformer;
 import com.graphaware.reco.generic.transform.ScoreTransformer;
 import com.graphaware.reco.neo4j.engine.SomethingInCommon;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.RelationshipType;
-import org.neo4j.graphdb.Transaction;
 
 /**
  * Created by duynk on 12/27/15.

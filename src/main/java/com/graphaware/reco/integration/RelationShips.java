@@ -1,3 +1,5 @@
+package com.graphaware.reco.integration;
+
 import org.neo4j.graphdb.RelationshipType;
 
 /**

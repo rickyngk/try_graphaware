@@ -1,3 +1,5 @@
+package com.graphaware.reco.integration;
+
 import com.graphaware.reco.generic.engine.RecommendationEngine;
 import com.graphaware.reco.generic.filter.BlacklistBuilder;
 import com.graphaware.reco.generic.filter.Filter;
