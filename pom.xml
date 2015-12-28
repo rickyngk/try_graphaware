@@ -8,7 +8,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <neo4j.version>2.3.1</neo4j.version>
         <graphaware.neo4j.version>2.3.1.36</graphaware.neo4j.version>
-        <junit.version>4.11</junit.version>
     </properties>
 
     <repositories>
@@ -59,32 +58,14 @@
 
         <dependency>
             <groupId>com.graphaware.neo4j</groupId>
-            <artifactId>tests</artifactId>
+            <artifactId>runtime</artifactId>
             <version>${graphaware.neo4j.version}</version>
         </dependency>
 
-        <!-- junit -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>com.graphaware.neo4j</groupId>
+            <artifactId>tests</artifactId>
+            <version>${graphaware.neo4j.version}</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <!-- Must use java 1.5 or higher for annotations -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-
-        </plugins>
-    </build>
 </project>
