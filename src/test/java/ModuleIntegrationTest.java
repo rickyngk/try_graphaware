@@ -1,5 +1,6 @@
 import com.graphaware.reco.generic.config.SimpleConfig;
 import com.graphaware.reco.generic.result.Recommendation;
+import com.graphaware.reco.integration.FriendsRecommendationEngine;
 import com.graphaware.reco.integration.log.RecommendationsRememberingLogger;
 import com.graphaware.reco.neo4j.engine.Neo4jTopLevelDelegatingRecommendationEngine;
 import com.graphaware.test.integration.WrappingServerIntegrationTest;
