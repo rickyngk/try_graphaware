@@ -22,7 +22,7 @@ public class FriendsInCommon extends SomethingInCommon {
 
     @Override
     protected RelationshipType getType() {
-        return RelationShips.FRIENDS_OF;
+        return RelationShips.FRIEND_OF;
     }
 
     @Override

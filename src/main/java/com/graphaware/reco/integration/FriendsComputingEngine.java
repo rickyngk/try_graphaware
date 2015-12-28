@@ -40,7 +40,7 @@ public class FriendsComputingEngine extends Neo4jTopLevelDelegatingRecommendatio
     @Override
     protected List<BlacklistBuilder<Node, Node>> blacklistBuilders() {
         return Arrays.<BlacklistBuilder<Node, Node>>asList(
-                new ExistingRelationshipBlacklistBuilder(RelationShips.FRIENDS_OF, Direction.BOTH)
+                new ExistingRelationshipBlacklistBuilder(RelationShips.FRIEND_OF, Direction.BOTH)
         );
     }
 

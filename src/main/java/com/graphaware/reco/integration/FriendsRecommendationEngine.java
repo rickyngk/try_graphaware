@@ -33,7 +33,7 @@ public class FriendsRecommendationEngine extends Neo4jTopLevelDelegatingRecommen
     protected List<BlacklistBuilder<Node, Node>> blacklistBuilders() {
         return Arrays.asList(
                 new ExcludeSelf(),
-                new ExistingRelationshipBlacklistBuilder(RelationShips.FRIENDS_OF, Direction.BOTH)
+                new ExistingRelationshipBlacklistBuilder(RelationShips.FRIEND_OF, Direction.BOTH)
         );
     }
 
