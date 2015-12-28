@@ -37,7 +37,7 @@
         <!-- neo4j -->
         <dependency>
             <groupId>org.neo4j</groupId>
-            <artifactId>neo4j</artifactId>
+            <artifactId>neo4j-kernel</artifactId>
             <version>${neo4j.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
@@ -58,6 +58,12 @@
 
         <dependency>
             <groupId>com.graphaware.neo4j</groupId>
+            <artifactId>runtime-api</artifactId>
+            <version>${graphaware.neo4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.graphaware.neo4j</groupId>
             <artifactId>runtime</artifactId>
             <version>${graphaware.neo4j.version}</version>
         </dependency>
@@ -67,5 +73,6 @@
             <artifactId>tests</artifactId>
             <version>${graphaware.neo4j.version}</version>
         </dependency>
+
     </dependencies>
 </project>
