@@ -1,4 +1,4 @@
-package com.graphaware.reco.integration;
+package com.r;
 
 import com.graphaware.reco.generic.transform.ParetoScoreTransformer;
 import com.graphaware.reco.generic.transform.ScoreTransformer;
@@ -15,7 +15,7 @@ import java.util.Map;
  * Created by duynk on 12/27/15.
  */
 public class FriendsInCommon extends SomethingInCommon {
-    private ScoreTransformer scoreTransformer = new ParetoScoreTransformer(100, 10);
+    private ScoreTransformer scoreTransformer = ParetoScoreTransformer.create(100, 10);
 
     public String name() {
         return "friendsInCommon";

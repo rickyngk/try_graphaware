@@ -1,4 +1,4 @@
-package com.graphaware.reco.integration;
+package com.r;
 
 import org.neo4j.graphdb.RelationshipType;
 

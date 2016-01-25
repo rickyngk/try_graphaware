@@ -1,5 +1,4 @@
-package com.graphaware.reco.integration;
-
+package com.r;
 import com.graphaware.reco.generic.result.PartialScore;
 import com.graphaware.reco.neo4j.post.RewardSomethingShared;
 import org.neo4j.graphdb.Direction;

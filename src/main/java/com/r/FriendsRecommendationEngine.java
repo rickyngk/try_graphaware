@@ -1,11 +1,12 @@
-package com.graphaware.reco.integration;
+package com.r;
 
-import com.graphaware.reco.generic.context.Context;
 import com.graphaware.reco.generic.engine.RecommendationEngine;
 import com.graphaware.reco.generic.filter.BlacklistBuilder;
 import com.graphaware.reco.generic.filter.Filter;
-import com.graphaware.reco.generic.policy.ParticipationPolicy;
-import com.graphaware.reco.generic.post.PostProcessor;
+import com.graphaware.reco.generic.log.Logger;
+import com.graphaware.reco.generic.log.Slf4jRecommendationLogger;
+import com.graphaware.reco.generic.log.Slf4jStatisticsLogger;
+import com.graphaware.reco.neo4j.engine.Neo4jPrecomputedEngine;
 import com.graphaware.reco.neo4j.engine.Neo4jTopLevelDelegatingRecommendationEngine;
 import com.graphaware.reco.neo4j.filter.ExcludeSelf;
 import com.graphaware.reco.neo4j.filter.ExistingRelationshipBlacklistBuilder;
@@ -18,28 +19,20 @@ import java.util.List;
 /**
  * Created by duynk on 12/28/15.
  */
-public class FriendsComputingEngine extends Neo4jTopLevelDelegatingRecommendationEngine {
+public class FriendsRecommendationEngine extends Neo4jTopLevelDelegatingRecommendationEngine {
 
     @Override
     protected List<RecommendationEngine<Node, Node>> engines() {
         return Arrays.<RecommendationEngine<Node, Node>>asList(
-                new FriendsInCommon(),
-                new RandomPeople()
-        );
-    }
-
-    @Override
-    protected List<PostProcessor<Node, Node>> postProcessors() {
-        return Arrays.<PostProcessor<Node, Node>>asList(
-                new RewardSameLabels(),
-                new RewardSameLocation(),
-                new PenalizeAgeDifference()
+                new Neo4jPrecomputedEngine(),
+                new FriendsComputingEngine()
         );
     }
 
     @Override
     protected List<BlacklistBuilder<Node, Node>> blacklistBuilders() {
-        return Arrays.<BlacklistBuilder<Node, Node>>asList(
+        return Arrays.asList(
+                new ExcludeSelf(),
                 new ExistingRelationshipBlacklistBuilder(RelationShips.FRIEND_OF, Direction.BOTH)
         );
     }
@@ -52,7 +45,10 @@ public class FriendsComputingEngine extends Neo4jTopLevelDelegatingRecommendatio
     }
 
     @Override
-    public ParticipationPolicy<Node, Node> participationPolicy(Context<Node, Node> context) {
-        return ParticipationPolicy.IF_MORE_RESULTS_NEEDED;
+    protected List<Logger<Node, Node>> loggers() {
+        return Arrays.<Logger<Node, Node>>asList(
+                new Slf4jRecommendationLogger<Node, Node>(),
+                new Slf4jStatisticsLogger<Node, Node>()
+        );
     }
 }

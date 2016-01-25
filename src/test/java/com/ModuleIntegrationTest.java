@@ -1,6 +1,6 @@
 import com.graphaware.reco.generic.config.SimpleConfig;
 import com.graphaware.reco.generic.result.Recommendation;
-import com.graphaware.reco.integration.FriendsRecommendationEngine;
+import com.r.FriendsComputingEngine;
 import com.graphaware.reco.integration.log.RecommendationsRememberingLogger;
 import com.graphaware.reco.neo4j.engine.Neo4jTopLevelDelegatingRecommendationEngine;
 import com.graphaware.test.integration.WrappingServerIntegrationTest;
@@ -23,7 +23,7 @@ public class ModuleIntegrationTest extends WrappingServerIntegrationTest {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        recommendationEngine = new FriendsRecommendationEngine();
+        recommendationEngine = new FriendsComputingEngine();
         rememberingLogger.clear();
     }
 

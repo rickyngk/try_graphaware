@@ -1,4 +1,4 @@
-package com.graphaware.reco.integration;
+package com.r;
 
 import com.graphaware.common.policy.BaseNodeInclusionPolicy;
 import com.graphaware.common.policy.NodeInclusionPolicy;
